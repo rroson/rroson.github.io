@@ -36,6 +36,10 @@ a {
     text-decoration: none;
 }
 
+li {
+    font-size: 1.2rem;
+}
+
 .mini {
     font-size: 1.0rem;
     font-style: italic;
@@ -102,22 +106,17 @@ a:hover {
 /* Conteiner Central */
 .educacao {
     padding: 50px 0 25px 0;
-    background-color: #e4f0c6;
+    background-color: #9af0ff;
 }
 
  .experiencia {
     /* padding: 50px 0 25px 0; */
-    background-color: #fcffff;
+    background-color: #ffffff;
  }
 
  .habilidades {
     /* padding: 50px 0 25px 0; */
-    background-color: #B6C7AA;
- }
-
- .contato {
-    /* padding: 50px 0 25px 0; */
-    background-color: #fcffff;
+    background-color: #c7f0ab;
  }
 
  /* Elementos */
@@ -142,12 +141,6 @@ a:hover {
     float: right;
     margin-left: 30px;
  }
-
-.copyright {
-    color: #effafa;
-    font-size: .95rem;
-    padding: 20px 0;
-}
 
  .btn {
     background: #11cdd4;
@@ -177,7 +170,7 @@ a:hover {
   }
 
   .container-fundo {
-    background-color: #A0937D;
+    background-color: #cfa65e;
     padding: 30px 0 30px 0;
   }
 
@@ -305,3 +298,44 @@ button {
 button:hover {
     background-color: #0056b3;
 }
+
+.linkedin-link {
+    color: #0077B5; /* Cor oficial do WhatsApp */
+    /* position: fixed; */
+    bottom: 20px;
+    right: 20px;
+    text-decoration: none;
+}
+
+.x-link {
+    color: #000000; /* Cor oficial do WhatsApp */
+    /* position: fixed; */
+    bottom: 20px;
+    right: 20px;
+    text-decoration: none;
+}
+
+.github-link {
+    color: #181717; /* Cor oficial do WhatsApp */
+    /* position: fixed; */
+    bottom: 20px;
+    right: 20px;
+    text-decoration: none;
+}
+
+.site-link {
+    color: #f3d860; /* Cor oficial do WhatsApp */
+    /* position: fixed; */
+    bottom: 20px;
+    right: 20px;
+    text-decoration: none;
+}
+
+.whatsapp-link {
+    color: #25D366; /* Cor oficial do WhatsApp */
+    /* position: fixed; */
+    bottom: 20px;
+    right: 20px;
+    text-decoration: none;
+}
+
