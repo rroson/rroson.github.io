@@ -1,0 +1,24 @@
+[tool.poetry]
+name = "curriculo"
+version = "0.1.0"
+description = ""
+authors = ["Ricardo Roson <rroson@gmail.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.12"
+fastapi = "^0.111.0"
+jinja2 = "^3.1.4"
+python-dotenv = "^1.0.1"
+
+[tool.poetry.group.dev.dependencies]
+taskipy = "^1.13.0"
+
+[tool.taskipy.tasks]
+run = 'fastapi dev curriculo/app.py'
+test = 'pytest -s -x --cov=fast_zero -vv'
+post_test = 'coverage html'
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
