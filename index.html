@@ -189,7 +189,7 @@
       <section id="contato">
         <h2>Entre em Contato</h2>
         <div class="contact-form">
-            <form id="contactForm">
+            <form id="form">
                 <div class="form-group">
                     <label for="from_name">Nome:</label>
                     <input type="text" id="from_name" name="from_name" required>
@@ -202,13 +202,10 @@
                     <label for="message">Mensagem:</label>
                     <textarea id="message" name="message" rows="5" required></textarea>
                 </div>
-                <button type="submit">Enviar</button>
+                <button type="submit" id="button">Enviar</button>
             </form>
         </div>
-    </section>
-  
-      
-        </div>
+      </section>
 
         <div class="container-fundo">
           <a class="fundo-link" href="https://www.linkedin.com/in/ricardo-roson-3b195b97/">
@@ -224,7 +221,6 @@
             <i class="fas fa-globe fa-2xl"></i>
           </a>
         </div>
-      </section>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"
@@ -267,30 +263,33 @@
         });
     });
   </script>
-    // Script para envio de mensagem
-  <!-- Biblioteca EmailJS -->
-  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
-  
-  <!-- Inicializar EmailJS -->
-  <script type="text/javascript">
-      emailjs.init('service_bwpnxee');  // Seu User ID do EmailJS
-  
-      // Lógica para envio de formulário
-      document.getElementById('contactForm').addEventListener('submit', function(event) {
-          event.preventDefault();  // Prevenir comportamento padrão do formulário
-  
-          // Enviar o formulário utilizando o EmailJS
-          emailjs.sendForm('service_bwpnxee', 'template_7tobpao', this)
-              .then(function() {
-                  alert('Mensagem enviada com sucesso!');
-                  document.getElementById('contactForm').reset();  // Limpa o formulário após envio
-              }, function(error) {
-                  alert('Erro ao enviar mensagem. Por favor, tente novamente.');
-                  console.error('Erro:', error);  // Log do erro para debug
-              });
-      });
-  </script>
-  
+
+<!-- Script EmailJS -->
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+<script type="text/javascript">
+    emailjs.init('service_bwpnxee');  // Seu User ID do EmailJS
+
+    const btn = document.getElementById('button');
+    document.getElementById('form')
+        .addEventListener('submit', function(event) {
+        event.preventDefault();
+
+        btn.value = 'Enviando...';
+
+        const serviceID = 'default_service';  // Substitua se necessário
+        const templateID = 'template_7tobpao';  // Substitua pelo seu template ID
+
+        emailjs.sendForm(serviceID, templateID, this)
+            .then(() => {
+                btn.value = 'Enviar';
+                alert('Mensagem enviada com sucesso!');
+                document.getElementById('form').reset();  // Limpar o formulário após envio
+            }, (err) => {
+                btn.value = 'Enviar';
+                alert('Erro ao enviar: ' + JSON.stringify(err));
+            });
+    });
+</script>  
 
 </body>
 
