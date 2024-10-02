@@ -13,8 +13,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-  <link rel="stylesheet" href="{{ url_for('static', path='css/main_style.css') }}">
-  <link rel="icon" href="{{ url_for('static', path='imagens/favicon.ico') }}">
+  <link rel="stylesheet" href="main_style.css">
+  <link rel="icon" href="imagens/favicon.ico">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Dosis:wght@300&family=La+Belle+Aurore&family=Montserrat&display=swap"
@@ -38,12 +38,12 @@
   <!-- INICIO -->
   <section id="inicio">
     <div class="container-topo">
-      <img class="sol" src="{{ url_for('static', path='imagens/sol.png') }}" alt="sol">
-      <img class="nuvem-topo" src="{{ url_for('static', path='imagens/nuvem.png') }}" alt="nuvem">
+      <img class="sol" src="imagens/sol.png" alt="sol">
+      <img class="nuvem-topo" src="imagens/nuvem.png" alt="nuvem">
       <h1>Ricardo Roson</h1>
       <p class="titulo">Desenvolvedor</p>
-      <img class="nuvem-baixo" src="{{ url_for('static', path='imagens/nuvem.png') }}" alt="nuvem">
-      <img class="montanha" src="{{ url_for('static', path='imagens/montanha.png') }}" alt="montanha">
+      <img class="nuvem-baixo" src="imagens/nuvem.png" alt="nuvem">
+      <img class="montanha" src="imagens/montanha.png" alt="montanha">
     </div>
   </section>
 
@@ -51,7 +51,7 @@
   <div class="container-meio">
     <section id="apresentacao">
       <div class="perfil">
-        <img class="foto-img" src="{{ url_for('static', path='imagens/avatar.png') }}" alt="Avatar de Ricardo">
+        <img class="foto-img" src="imagens/avatar.png" alt="Avatar de Ricardo">
         <h2>Olá.</h2>
         <p class="texto-intro">Seja bem vindo! Meu nome é Ricardo e gostaria de compartilhar
           mais sobre a minha jornada até aqui. Siga em frente para conhecer mais sobre mim.
@@ -64,7 +64,7 @@
       <div class="educacao">
         <h2>Formação Acadêmica.</h2>
         <div class="sub_linha">
-          <img class="row-img" src="{{ url_for('static', path='imagens/graduacao.png') }}" alt="imagem de diploma">
+          <img class="row-img" src="imagens/graduacao.png" alt="imagem de diploma">
           <h3>Pós Graduação - ESAMC</h3>
           <p>MBA – Marketing com Especialização em Trends & Innovation – Campinas/SP – 2013</p>
           <h3>Graduação – Universidade São Francisco (USF)</h3>
@@ -77,7 +77,7 @@
         <div class="experiencia">
           <h2>Experiência Profissional.</h2>
           <div class="sub_linha">
-            <img class="office-img" src="{{ url_for('static', path='imagens/office.png') }}" alt="imagem de pessoa trabalhando">
+            <img class="office-img" src="imagens/office.png" alt="imagem de pessoa trabalhando">
             <h3>Colégio Litteratus - Centro de Educação e Cultura</h3>
             <p>Professor de tecnologia, programação e robótica (FI, FII e EM)</p>
             <ul>
@@ -118,7 +118,7 @@
         <div class="habilidades">
           <h2>Habilidades em Desenvolvimento</h2>
           <div class="sub_linha_2">
-            <img class="notebook-img" src="{{ url_for('static', path='imagens/habilidades_logo.png') }}" alt="imagem de notebook">
+            <img class="notebook-img" src="imagens/habilidades_logo.png" alt="imagem de notebook">
             <table>
               <thead>
                   <tr>
@@ -191,12 +191,12 @@
         <div class="contact-form">
             <form id="contactForm">
                 <div class="form-group">
-                    <label for="name">Nome:</label>
-                    <input type="text" id="name" name="name" required>
+                    <label for="from_name">Nome:</label>
+                    <input type="text" id="from_name" name="from_name" required>
                 </div>
                 <div class="form-group">
-                    <label for="email">E-mail:</label>
-                    <input type="email" id="email" name="email" required>
+                    <label for="reply_to">E-mail:</label>
+                    <input type="email" id="reply_to" name="reply_to" required>
                 </div>
                 <div class="form-group">
                     <label for="message">Mensagem:</label>
@@ -205,22 +205,22 @@
                 <button type="submit">Enviar</button>
             </form>
         </div>
-      </section>
+    </section>
   
       
         </div>
 
         <div class="container-fundo">
-          <a class="fundo-link" href="https://www.linkedin.com/">
+          <a class="fundo-link" href="https://www.linkedin.com/in/ricardo-roson-3b195b97/">
             <i class="fab fa-linkedin fa-2xl"></i>
           </a>
-          <a class="fundo-link" href="https://x.com/">
+          <a class="fundo-link" href="https://x.com/rroson">
             <i class="fa-brands fa-x-twitter fa-2xl"></i>
           </a>
-          <a class="fundo-link" href="https://www.github.com/">
+          <a class="fundo-link" href="https://github.com/rroson">
             <i class="fa-brands fa-github-square fa-2xl"></i>
           </a>
-          <a class="fundo-link" href="https://www.appbrewery.co/">
+          <a class="fundo-link" href="http://rroson.github.io/">
             <i class="fas fa-globe fa-2xl"></i>
           </a>
         </div>
@@ -267,35 +267,31 @@
         });
     });
   </script>
-  <script>
     // Script para envio de mensagem
-    document.getElementById('contactForm').addEventListener('submit', async (e) => {
-        e.preventDefault();
-        
-        const formData = new FormData(e.target);
-        const data = Object.fromEntries(formData.entries());
-        
-        try {
-            const response = await fetch('/api/contact', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify(data),
-            });
-            
-            if (response.ok) {
-                alert('Mensagem enviada com sucesso!');
-                e.target.reset();
-            } else {
-                alert('Erro ao enviar mensagem. Por favor, tente novamente.');
-            }
-        } catch (error) {
-            console.error('Erro:', error);
-            alert('Erro ao enviar mensagem. Por favor, tente novamente.');
-        }
-    });
+  <!-- Biblioteca EmailJS -->
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+  
+  <!-- Inicializar EmailJS -->
+  <script type="text/javascript">
+      emailjs.init('service_bwpnxee');  // Seu User ID do EmailJS
+  
+      // Lógica para envio de formulário
+      document.getElementById('contactForm').addEventListener('submit', function(event) {
+          event.preventDefault();  // Prevenir comportamento padrão do formulário
+  
+          // Enviar o formulário utilizando o EmailJS
+          emailjs.sendForm('service_bwpnxee', 'template_7tobpao', this)
+              .then(function() {
+                  alert('Mensagem enviada com sucesso!');
+                  document.getElementById('contactForm').reset();  // Limpa o formulário após envio
+              }, function(error) {
+                  alert('Erro ao enviar mensagem. Por favor, tente novamente.');
+                  console.error('Erro:', error);  // Log do erro para debug
+              });
+      });
   </script>
+  
+
 </body>
 
 </html>
